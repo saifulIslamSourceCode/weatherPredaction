@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { OnInit } from '@angular/core';
 import { filter, map } from 'rxjs';
+import { Footer } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ import { filter, map } from 'rxjs';
     MatButtonModule,
     SidebarComponent,
     CommonModule,
+    Footer
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

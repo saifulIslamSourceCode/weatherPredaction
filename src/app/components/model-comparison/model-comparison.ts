@@ -21,11 +21,11 @@ export class ModelComparison {
   models = [
     { name: 'SVR', mae: 63.24, r2: 0.78 },
     { name: 'Random Forest', mae: 64.26, r2: 0.78 },
-    { name: 'Gradient Boosting', mae: 67.89, r2: 0.78 },
-    { name: 'MLP', mae: 69.12, r2: 0.78 },
-    { name: 'Linear Regression', mae: 72.34, r2: 0.65 },
-    { name: 'Decision Tree', mae: 75.67, r2: 0.60 },
-    { name: 'Baseline Model', mae: 78.90, r2: 0.50 } // Added as the 7th row with lower performance
+    { name: 'Gradient Boosting', mae: 66.41, r2: 0.78 },
+    { name: 'MLP', mae: 66.73, r2: 0.78 },
+    { name: 'Linear Regression', mae: 95.48, r2: 0.64 },
+    { name: 'Decision Tree', mae: 89.29, r2: 0.58 },
+    { name: 'KNN', mae: 70.83, r2: 0.74 } // Added as the 7th row with lower performance
   ];
 
   recommendationTitle: string = "Why Random Forest is the Best Model";
