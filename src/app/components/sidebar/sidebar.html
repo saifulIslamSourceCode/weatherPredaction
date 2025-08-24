@@ -1,0 +1,82 @@
+<mat-toolbar class="sidebar-toolbar">
+  <span class="toolbar-title">Weather Analysis</span>
+</mat-toolbar>
+
+<mat-nav-list class="sidebar-nav">
+  <!-- Weather Stations -->
+  <a mat-list-item routerLink="/weather-stations" routerLinkActive="active-link" class="nav-item">
+    <mat-icon matListIcon>cloud</mat-icon>
+    <span class="nav-text">Weather Stations</span>
+  </a>
+
+  <!-- Previous Years Data Analysis -->
+  <mat-expansion-panel 
+    [expanded]="expanded === 'previous'" 
+    (opened)="setExpanded('previous')" 
+    (closed)="setExpanded(null)"
+    class="expansion-panel">
+    <mat-expansion-panel-header class="panel-header">
+      <mat-panel-title>
+        <mat-icon matListIcon>timeline</mat-icon>
+        <span class="nav-text">Previous Years Data Analysis</span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-nav-list class="sub-nav">
+      <a mat-list-item routerLink="/temporal-trend-analysis" routerLinkActive="active-link" class="sub-nav-item">
+        <mat-icon matListIcon>show_chart</mat-icon>
+        Temporal Trend Analysis
+      </a>
+      <a mat-list-item routerLink="/station-comparison" routerLinkActive="active-link" class="sub-nav-item">
+        <mat-icon matListIcon>compare_arrows</mat-icon>
+        Station-wise Comparison
+      </a>
+      <a mat-list-item routerLink="/correlation-rainfall" routerLinkActive="active-link" class="sub-nav-item">
+        <mat-icon matListIcon>water_drop</mat-icon>
+        Correlation Analysis Rainfall
+      </a>
+      <a mat-list-item routerLink="/seasonal-variation" routerLinkActive="active-link" class="sub-nav-item">
+        <mat-icon matListIcon>calendar_month</mat-icon>
+        Seasonal Variation
+      </a>
+      <a mat-list-item routerLink="/extreme-weather" routerLinkActive="active-link" class="sub-nav-item">
+        <mat-icon matListIcon>warning</mat-icon>
+        Extreme Weather Detection
+      </a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+
+  <!-- Model Run -->
+  <mat-expansion-panel 
+    [expanded]="expanded === 'modelRun'" 
+    (opened)="setExpanded('modelRun')" 
+    (closed)="setExpanded(null)"
+    class="expansion-panel">
+    <mat-expansion-panel-header class="panel-header">
+      <mat-panel-title>
+        <mat-icon matListIcon>model_training</mat-icon>
+        <span class="nav-text">Model Run</span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-nav-list class="sub-nav">
+      <a mat-list-item routerLink="/svm" routerLinkActive="active-link" class="sub-nav-item">
+        <mat-icon matListIcon>functions</mat-icon>
+        SVM
+      </a>
+      <a mat-list-item routerLink="/random-forest" routerLinkActive="active-link" class="sub-nav-item">
+        <mat-icon matListIcon>forest</mat-icon>
+        Random Forest Model
+      </a>
+      <a mat-list-item routerLink="/model-7" routerLinkActive="active-link" class="sub-nav-item">
+        <mat-icon matListIcon>build</mat-icon>
+        Model 3 to 7
+      </a>
+
+    </mat-nav-list>
+  </mat-expansion-panel>
+
+  <!-- Best Fit Model -->
+  <a mat-list-item routerLink="/best-fit-model" routerLinkActive="active-link" class="nav-item" >
+    <mat-icon matListIcon>star</mat-icon>
+    <span class="nav-text">Best Fit Model</span>
+  </a>
+</mat-nav-list>

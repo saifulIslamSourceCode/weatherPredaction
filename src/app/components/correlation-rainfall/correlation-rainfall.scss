@@ -1,0 +1,124 @@
+.page-title {
+  color: #1f2937;
+  font-weight: 500;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.trend-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns on desktop */
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.trend-item {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  transition: transform 0.3s ease;
+}
+
+.trend-item:hover {
+  transform: translateY(-5px);
+}
+
+.trend-heading {
+  color: #1976d2;
+  font-size: 1.2em;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.trend-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  object-fit: cover;
+  cursor: pointer; /* Ensure clickable */
+  pointer-events: auto; /* Explicitly enable pointer events */
+}
+
+.trend-description {
+  color: #666;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+/* Overlay Styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Above all elements */
+}
+
+.overlay-content {
+  position: relative;
+  max-width: 65%;
+  text-align: center;
+}
+
+.enlarged-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.close-button:hover {
+  background: #cc0000;
+}
+
+@media (max-width: 768px) {
+  .trend-container {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+
+  .trend-item {
+    margin-bottom: 16px;
+  }
+
+  .trend-heading {
+    font-size: 1.1em;
+  }
+
+  .trend-description {
+    font-size: 0.85em;
+  }
+
+  .overlay-content {
+    max-width: 95%;
+    max-height: 95%;
+  }
+}
+
+.click {
+  color: #1976d2;
+  font-weight: bolder;
+}

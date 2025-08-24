@@ -1,0 +1,44 @@
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 250px;
+  background: #f9fafc;
+  transition: width 0.3s ease;
+}
+
+.sidenav-collapsed {
+  width: 60px;
+}
+
+.main-toolbar {
+  background: #1976d2;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.toolbar-title {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-left: 16px;
+}
+
+.content {
+
+
+  
+}
+.mat-drawer.mat-drawer-side {
+  z-index: 0;
+}
+@media (max-width: 768px) {
+  .sidenav {
+    width: 200px;
+  }
+}
+
+  

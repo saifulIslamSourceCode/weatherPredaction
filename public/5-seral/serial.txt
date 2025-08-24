@@ -1,0 +1,5 @@
+1. Temporal Trend Analysis
+2. Station-wise Comparison
+3. Correlation Analysis Rainfall
+4. Seasonal Variation
+5. Extreme Weather Detection

@@ -1,0 +1,110 @@
+.page-title {
+  color: #1f2937;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.page-title .source-label {
+  font-size: 0.8em;
+  color: #666;
+  margin-left: 10px;
+}
+
+.page-title .source-label a {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.page-title .source-label a:hover {
+  text-decoration: underline;
+}
+
+.table-container {
+  position: relative;
+  overflow: auto;
+  max-height: calc(100vh - 200px); /* Adjust based on viewport */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.weather-table {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.weather-table mat-header-cell {
+  background: linear-gradient(90deg, #1976d2, #42a5f5);
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+}
+
+.weather-table mat-cell {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Make SL column thinner */
+.weather-table .mat-column-sl {
+  width: 50px; /* Thinner column width */
+  max-width: 50px; /* Ensure it doesn't expand */
+  text-align: center; /* Center-align content for better look */
+}
+
+.weather-table mat-row:hover {
+  background: #f5faff;
+  transition: background 0.3s ease;
+}
+
+.weather-table mat-paginator {
+  background: #fff;
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .weather-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .weather-table mat-header-cell,
+  .weather-table mat-cell {
+    min-width: 150px;
+    box-sizing: border-box;
+  }
+
+  .weather-table mat-row {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+  }
+
+  .weather-table mat-cell {
+    padding: 8px 0;
+    display: block;
+    font-size: 14px;
+  }
+
+  .weather-table mat-cell::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #1976d2;
+    margin-right: 8px;
+  }
+
+  .weather-table mat-header-row {
+    display: none;
+  }
+
+  /* Adjust SL column width on mobile to maintain readability */
+  .weather-table .mat-column-sl {
+    width: 50px;
+    max-width: 50px;
+  }
+}

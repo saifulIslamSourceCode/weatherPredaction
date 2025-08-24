@@ -1,0 +1,24 @@
+<h2 class="page-title">Temporal Trend Analysis</h2>
+<div class="trend-container">
+  <!-- Image 1 -->
+  <div class="trend-item">
+    <h3 class="trend-heading">Rainfall Trend (2015-2025)</h3>
+    <img [src]="image1Src" alt="Rainfall Trend" class="trend-image" (click)="openOverlay(image1Src)">
+    <p class="trend-description">{{ image1Description }}  <br> <span class="click">click on the image to enlarge</span> <br>{{ image1MoreDescription }}</p>
+  </div>
+
+  <!-- Image 2 -->
+  <div class="trend-item">
+    <h3 class="trend-heading">Seasonal Temperature Variation</h3>
+    <img [src]="image2Src" alt="Temperature Variation" class="trend-image" (click)="openOverlay(image2Src)">
+    <p class="trend-description">{{ image2Description }} <br> <span class="click">click on the image to enlarge</span> <br>{{ image2MoreDescription }}</p>
+  </div>
+</div>
+
+<!-- Overlay for enlarged image -->
+<div class="overlay" *ngIf="isOverlayOpen" (click)="closeOverlay($event)">
+  <div class="overlay-content" (click)="$event.stopPropagation()">
+    <img [src]="selectedImageSrc" alt="Enlarged Image" class="enlarged-image">
+    <button class="close-button" (click)="closeOverlay($event)">×</button>
+  </div>
+</div>
