@@ -1,0 +1,39 @@
+<mat-card class="model-comparison-container">
+  <mat-card-header>
+    <mat-card-title>Machine Learning Model Comparison</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>After evaluated 7 machine learning models using <strong>Mean Absolute Error (MAE)</strong> and <strong>R²</strong> metrics to select the best predictive model.</p>
+
+    <table mat-table [dataSource]="models" class="model-table">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Model</th>
+        <td mat-cell *matCellDef="let model">{{ model.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="mae">
+        <th mat-header-cell *matHeaderCellDef>MAE</th>
+        <td mat-cell *matCellDef="let model">{{ model.mae }}</td>
+      </ng-container>
+      <ng-container matColumnDef="r2">
+        <th mat-header-cell *matHeaderCellDef>R²</th>
+        <td mat-cell *matCellDef="let model">{{ model.r2 }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['name', 'mae', 'r2']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['name', 'mae', 'r2']"></tr>
+    </table>
+
+    <h3 class="analysis-title">Analysis</h3>
+    <p><strong>MAE:</strong> Lower MAE indicates better prediction accuracy. SVR (63.24) and Random Forest (64.26) perform best.</p>
+    <p><strong>R²:</strong> Higher R² indicates a better fit. SVR, Random Forest, Gradient Boosting, and MLP achieved the highest R² of 0.78.</p>
+    <p><strong>Stability & Robustness:</strong> Random Forest is less sensitive to noise, reduces overfitting, handles non-linear relationships, and provides feature importance insights.</p>
+
+    <h3 class="conclusion-title">✅ Conclusion</h3>
+    <h4>{{ recommendationTitle }}</h4>
+    <mat-list>
+      <mat-list-item *ngFor="let detail of recommendationDetails">
+        <span [innerHTML]="detail"></span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
