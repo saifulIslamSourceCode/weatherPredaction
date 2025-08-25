@@ -1,0 +1,137 @@
+.model-comparison-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: #ffffff;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+mat-card-title {
+  color: #1f2937;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.model-table {
+  width: 100%;
+  margin: 16px 0;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  th {
+    background: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  tr:hover {
+    background: #f5f5f5;
+  }
+
+  // Target the "Random Forest" row
+  tr[mat-row]:not(:first-child) {
+    &:nth-child(2) {
+      background-color: #03aa0b; // Vibrant green
+      color: white;
+      font-weight: bold;
+
+      td {
+        color: white;
+      }
+
+      &:hover {
+        background-color: #1b5e20; // Darker green on hover
+      }
+    }
+  }
+}
+
+.analysis-title,
+.conclusion-title {
+  color: #1976d2;
+  font-size: 1.2em;
+  margin-top: 24px;
+  font-weight: 600;
+}
+
+.conclusion-title {
+  &::before {
+    content: '✅ ';
+  }
+}
+
+h4 {
+  color: #1f2937;
+  font-size: 1.1em;
+  margin: 12px 0 8px;
+  font-weight: 500;
+}
+
+mat-list {
+  padding: 0;
+
+  mat-list-item {
+    padding: 8px 0;
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.5;
+
+    strong {
+      color: #1f2937;
+    }
+  }
+}
+
+p {
+  color: #666;
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin: 8px 0;
+}
+
+strong {
+  color: #1f2937;
+}
+
+@media (max-width: 768px) {
+  .model-comparison-container {
+    padding: 8px;
+  }
+
+  .model-table {
+    th,
+    td {
+      padding: 8px;
+      font-size: 0.85em;
+    }
+  }
+
+  .analysis-title,
+  .conclusion-title {
+    font-size: 1.1em;
+  }
+
+  h4 {
+    font-size: 1em;
+  }
+
+  mat-list-item {
+    font-size: 0.85em;
+  }
+
+  p {
+    font-size: 0.85em;
+  }
+}
