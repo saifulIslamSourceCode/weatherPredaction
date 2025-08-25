@@ -1,6 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostListener, signal, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -31,9 +31,21 @@ export class App implements OnInit {
   // protected readonly title = signal('weatherPredaction');
   pageTitle: string = '';
 
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+  isDesktop: boolean = true;
+  sidenavWidth: number = 250; // Width of the sidenav
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.checkScreenSize();
+  }
+
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.checkScreenSize();
+
     this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),
@@ -48,5 +60,20 @@ export class App implements OnInit {
       .subscribe(title => {
         this.pageTitle = title;
       });
+  }
+
+  checkScreenSize() {
+    this.isDesktop = window.innerWidth > 768;
+    if (!this.isDesktop && this.sidenav.opened) {
+      this.sidenav.close();
+    } else if (this.isDesktop && !this.sidenav.opened) {
+      this.sidenav.open();
+    }
+  }
+
+  toggleSidenav() {
+    if (this.sidenav) {
+      this.sidenav.toggle();
+    }
   }
 }
