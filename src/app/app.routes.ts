@@ -8,6 +8,7 @@ import { ExtremeWeather } from './components/extreme-weather/extreme-weather';
 import { SvmModel } from './components/svm-model/svm-model';
 import { RandomForest } from './components/random-forest/random-forest';
 import { Total7Model } from './components/total-7-model/total-7-model';
+import { BestFitModel } from './components/best-fit-model/best-fit-model';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/weather-stations', pathMatch: 'full' },
@@ -19,5 +20,6 @@ export const routes: Routes = [
   { path: "extreme-weather", component: ExtremeWeather, data: { Title: 'Extreme Weather' } },
   { path: "svm", component: SvmModel, data: { Title: 'SVM Model' } },
   { path: "random-forest", component: RandomForest, data: { Title: 'Random Forest' } },
-  { path: "model-7", component: Total7Model, data: { Title: 'Total 7 Model' } }
+  { path: "model-7", component: Total7Model, data: { Title: 'Total 7 Model' } },
+  { path: "best-fit-model", component: BestFitModel, data: { Title: 'Best Fit Model' } }
 ];
